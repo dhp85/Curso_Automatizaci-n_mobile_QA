@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'co_dhp85'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext{
+    serenityCoreVersion = '5.3.7'
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'io.appium:java-client:10.0.0'
+    implementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}"
+    testImplementation "net.serenity-bdd:serenity-junit5:${serenityCoreVersion}"
+    testImplementation "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}"
+}
+
+test {
+    useJUnitPlatform()
+}
