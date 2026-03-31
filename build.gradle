@@ -1,5 +1,17 @@
+buildscript {
+    repositories {
+        mavenLocal()
+    }
+
+    dependencies {
+        classpath("net.serenity-bdd:serenity-single-page-report:5.3.7")
+    }
+}
+
 plugins {
     id 'java'
+    id'idea'
+    id "net.serenity-bdd.serenity-gradle-plugin" version "5.3.7"
 }
 
 group = 'co_dhp85'
@@ -28,3 +40,9 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+serenity {
+    reports = ["single-page-html"]
+}
+
+test.finalizedBy(aggregate)
