@@ -23,7 +23,8 @@ public class SampleTest {
                 .setPlatformName("iOS")
                 .setUdid("6FEF71A2-E687-4CF4-9D42-EEEA18A4F928")
                 .setPlatformVersion("26.0")
-                .setBundleId("com.Diego.SportMeet");
+                .setBundleId("com.Diego.SportMeet")
+                .setAutoAcceptAlerts(true);
         driver = new IOSDriver(
                 new URL("http://127.0.0.1:4723/"), options
         );
